@@ -3,7 +3,7 @@ import ProductSection from "../_components/Main/ProductSection";
 
 export default function page() {
   return (
-    <main className="md:px-20 px-2 py-2 flex flex-col gap-6">
+    <main className="lg:px-20 px-5 py-4 flex flex-col gap-4">
       <Breadcrumb />
       <ProductSection />
     </main>

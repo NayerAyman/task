@@ -2,14 +2,7 @@
 
 import Logo from "@/app/_components/ui/Logo";
 import { useState, useRef, useEffect } from "react";
-import {
-  FaShoppingBag,
-  FaFileInvoice,
-  FaHeart,
-  FaUser,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -45,9 +38,9 @@ export default function NavBar() {
   ];
 
   return (
-    <nav className="w-full bg-white shadow-xs px-4 py-2 sm:py-5 md:px-20 md:py-4 flex items-center justify-between transition-all duration-300">
+    <nav className="w-full bg-white shadow-xs px-4 py-2 sm:py-5 lg:px-20 lg:py-4 flex items-center justify-between transition-all duration-300">
       {/* LEFT (Logo + Links) */}
-      <div className="hidden md:flex items-center gap-6 lg:gap-8">
+      <div className="hidden lg:flex items-center gap-6 lg:gap-8">
         <Logo width={60} height={13} />
         {urls.map((item) => (
           <NavItem
@@ -61,7 +54,7 @@ export default function NavBar() {
       </div>
 
       {/* RIGHT (Icons) */}
-      <div className="hidden md:flex items-center gap-4 lg:gap-5">
+      <div className="hidden lg:flex items-center gap-4 lg:gap-5">
         <Image
           src="/icon/interface/outline/bag.svg"
           width={18}
@@ -115,7 +108,13 @@ export default function NavBar() {
             aria-label="User Menu"
             aria-expanded={userOpen}
           >
-            <Image src="/icon/interface/outline/user.svg" alt="user" width={14} height={14} className="text-xl" />
+            <Image
+              src="/icon/interface/outline/user.svg"
+              alt="user"
+              width={14}
+              height={14}
+              className="text-xl"
+            />
             <FiChevronDown className="text-lg text-black" />
           </button>
           {userOpen && (
@@ -132,7 +131,7 @@ export default function NavBar() {
       </div>
 
       {/* MOBILE */}
-      <div className="flex md:hidden w-full items-center justify-between">
+      <div className="flex lg:hidden w-full items-center justify-between">
         <Logo width={60} height={32} />
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -148,7 +147,7 @@ export default function NavBar() {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="absolute top-13 left-0 w-full bg-white border-t border-gray-200 p-4 flex flex-col gap-4 md:hidden z-20 transition-all duration-300 ease-in-out"
+          className="absolute top-15 left-0 w-full bg-white border-t border-gray-200 p-4 flex flex-col gap-4 lg:hidden z-20 transition-all duration-300 ease-in-out"
         >
           {urls.map((item) => (
             <NavItem
@@ -164,9 +163,27 @@ export default function NavBar() {
           <hr className="border-gray-200" />
 
           <div className="flex gap-6 justify-center">
-            <Image src="/icon/interface/outline/bag.svg" alt="" width={18} height={20} className="text-xl text-gray-600 hover:text-orange-900  transition-colors" />
-            <Image src="/icon/interface/outline/bill.svg" alt="" width={18} height={20} className="text-xl text-gray-600 hover:text-orange-900  transition-colors" />
-            <Image src="/icon/interface/outline/heart.svg" alt="" width={18} height={20} className="text-xl text-gray-600 hover:text-orange-900  transition-colors" />
+            <Image
+              src="/icon/interface/outline/bag.svg"
+              alt=""
+              width={18}
+              height={20}
+              className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
+            />
+            <Image
+              src="/icon/interface/outline/bill.svg"
+              alt=""
+              width={18}
+              height={20}
+              className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
+            />
+            <Image
+              src="/icon/interface/outline/heart.svg"
+              alt=""
+              width={18}
+              height={20}
+              className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
+            />
           </div>
 
           <div className="flex gap-4 justify-center">
