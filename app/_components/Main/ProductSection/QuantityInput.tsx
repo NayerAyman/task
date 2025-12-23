@@ -33,12 +33,14 @@ function QuantityInput({
   return (
     <div
       className="
-          w-full h-full
+            h-full
           rounded-lg
           flex items-center justify-between
           bg-[#f5f5f5]
-          p-1.5 md:max-w-42.5
+          p-1.5 md:w-fit
           min-w-37.5 
+          w-[55%]
+          mr-3
         "
       style={{
         gridRow,
@@ -52,13 +54,13 @@ function QuantityInput({
             p-2 text-black
             bg-white
             rounded-lg
-            disabled:opacity-40 disabled:cursor-not-allowed
+            disabled:opacity-40 py-4 px-4 disabled:cursor-not-allowed
           "
       >
         <FiMinus />
       </button>
 
-      <span className="text-center font-medium text-sm md:text-lg text-black">
+      <span className="text-center px-9 text-md md:text-xl text-black">
         {quantity < 10 ? `0${quantity}` : quantity}
       </span>
 
@@ -69,7 +71,7 @@ function QuantityInput({
             p-2 text-black
             bg-white
             rounded-lg
-            disabled:opacity-40 disabled:cursor-not-allowed
+            disabled:opacity-40 py-4 px-4 disabled:cursor-not-allowed
           "
       >
         <FiPlus />

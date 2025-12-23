@@ -58,7 +58,7 @@ export default function NavigationCarousel({
         <SwiperSlide className="m-0 " key={index}>
           <div
             style={{
-              boxShadow: "0px 67px 39px -31px rgba(0, 0, 0, 0.301) inset;",
+              boxShadow: "0px 67px 39px -31px rgba(0, 0, 0, 0.301) inset",
             }}
             className="relative w-full h-full bg-[#f5f5f5]"
           >

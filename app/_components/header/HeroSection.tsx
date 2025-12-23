@@ -2,7 +2,7 @@ import { heroSetionTitle } from "@/app/_lib/consts";
 
 export default function HeroSection() {
   return (
-    <div className="relative flex h-32 w-full items-center bg-gray-100 justify-center bg-[url(/imgs/HeroImage.png)] bg-position-[30%_90%] sm:h-45 capitalize select-none">
+    <div className="relative flex h-40 w-full items-center bg-gray-100 justify-center bg-[url(/imgs/HeroImage.png)] bg-position-[30%_90%] sm:h-45 capitalize select-none">
       <HeroText text={heroSetionTitle.lg} className="hidden md:block" />
       <HeroText text={heroSetionTitle.sm} className="block md:hidden" />
     </div>

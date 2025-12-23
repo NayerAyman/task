@@ -9,7 +9,7 @@ export default function Breadcrumb() {
   ];
 
   return (
-    <div className="bg-[#f6f6f6] w-full h-14 flex gap-2 items-center px-5 text-sm font-semibold rounded-2xl capitalize">
+    <div className="bg-[#f6f6f6] w-full h-14 flex gap-2 items-center px-5 text-sm font-semibold rounded-2xl capitalize mb-2">
       {staticRoutes.map((route, index) => (
         <div className="flex gap-2 items-center" key={route.lg}>
           <button

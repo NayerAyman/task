@@ -12,9 +12,9 @@ function ProductImages({ images }: ProductImagesProps) {
 
   return (
     <div
-      className="w-full h-full grid grid-cols-3
+      className=" w-full h-full grid grid-cols-3
         grid-rows-[repeat(13,1fr)]
-        gap-y-2 gap-x-2 rounded-[10px] overflow-hidden aspect-[1/1.5] md:col-[1/6]
+        gap-y-2 gap-x-2 rounded-[10px]  aspect-[1/1.5] md:col-[1/6]
           select-none
 "
     >
@@ -48,6 +48,7 @@ function ProductImages({ images }: ProductImagesProps) {
           </div>
         </div>
       ))}
+
     </div>
   );
 }

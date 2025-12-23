@@ -38,7 +38,7 @@ export default function NavBar() {
   ];
 
   return (
-    <nav className="w-full bg-white shadow-xs px-4 py-2 sm:py-5 lg:px-20 lg:py-4 flex items-center justify-between transition-all duration-300">
+    <nav className="w-full bg-white shadow-xs px-4 py-2 sm:py-5 lg:px-20 lg:py-4 flex items-center justify-between transition-all duration-300 h-20">
       {/* LEFT (Logo + Links) */}
       <div className="hidden lg:flex items-center gap-6 lg:gap-8">
         <Logo width={60} height={13} />
@@ -145,65 +145,71 @@ export default function NavBar() {
 
       {/* MOBILE MENU */}
       {menuOpen && (
-        <div
-          ref={menuRef}
-          className="absolute top-15 left-0 w-full bg-white border-t border-gray-200 p-4 flex flex-col gap-4 lg:hidden z-20 transition-all duration-300 ease-in-out"
-        >
-          {urls.map((item) => (
-            <NavItem
-              key={item.label}
-              icon={
-                <Image src={item.img} alt={item.label} width={20} height={20} />
-              }
-              text={item.label}
-              mobile
-            />
-          ))}
+        <>
+          <div
+            className="fixed inset-0 bg-black/30 z-1000"
+            onClick={() => setMenuOpen(false)}
+          />
+          <div
+            ref={menuRef}
+            className="absolute top-15 left-0 w-full bg-white border-t border-gray-200 p-4 flex flex-col gap-4 lg:hidden z-1001 transition-all duration-300 ease-in-out"
+          >
+            {urls.map((item) => (
+              <NavItem
+                key={item.label}
+                icon={
+                  <Image src={item.img} alt={item.label} width={20} height={20} />
+                }
+                text={item.label}
+                mobile
+              />
+            ))}
 
-          <hr className="border-gray-200" />
+            <hr className="border-gray-200" />
 
-          <div className="flex gap-6 justify-center">
-            <Image
-              src="/icon/interface/outline/bag.svg"
-              alt=""
-              width={18}
-              height={20}
-              className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
-            />
-            <Image
-              src="/icon/interface/outline/bill.svg"
-              alt=""
-              width={18}
-              height={20}
-              className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
-            />
-            <Image
-              src="/icon/interface/outline/heart.svg"
-              alt=""
-              width={18}
-              height={20}
-              className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
-            />
+            <div className="flex gap-6 justify-center">
+              <Image
+                src="/icon/interface/outline/bag.svg"
+                alt=""
+                width={18}
+                height={20}
+                className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
+              />
+              <Image
+                src="/icon/interface/outline/bill.svg"
+                alt=""
+                width={18}
+                height={20}
+                className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
+              />
+              <Image
+                src="/icon/interface/outline/heart.svg"
+                alt=""
+                width={18}
+                height={20}
+                className="text-xl text-gray-600 hover:text-orange-900  transition-colors"
+              />
+            </div>
+
+            <div className="flex gap-4 justify-center">
+              <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-indigo-50 hover:text-orange-900  transition-colors">
+                EN
+              </button>
+              <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-indigo-50 hover:text-orange-900  transition-colors">
+                AR
+              </button>
+            </div>
+
+            <div className="flex gap-4 justify-center">
+              <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-indigo-50 hover:text-orange-900  transition-colors">
+                Login
+              </button>
+              <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-indigo-50 hover:text-orange-900  transition-colors">
+                Logout
+              </button>
+            </div>
           </div>
-
-          <div className="flex gap-4 justify-center">
-            <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-indigo-50 hover:text-orange-900  transition-colors">
-              EN
-            </button>
-            <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-indigo-50 hover:text-orange-900  transition-colors">
-              AR
-            </button>
-          </div>
-
-          <div className="flex gap-4 justify-center">
-            <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-indigo-50 hover:text-orange-900  transition-colors">
-              Login
-            </button>
-            <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-indigo-50 hover:text-orange-900  transition-colors">
-              Logout
-            </button>
-          </div>
-        </div>
+        </>
       )}
     </nav>
   );

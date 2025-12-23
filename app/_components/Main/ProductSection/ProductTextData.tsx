@@ -43,10 +43,14 @@ function ProductTextData({
         </div>
       </div>
 
-      <h4 className="text-2xl font-semibold">{name}</h4>
+      <div className="w-full md:w-[80%] flex flex-col gap-5">
+
+<h4 className="font-semibold mt-1 leading-relaxed md:text-2xl">
+  {name}
+</h4>
 
       {/* Price */}
-      <div className="flex flex-col">
+      <div className="flex flex-col ">
         <div className="flex items-center gap-4">
           <h5 className="text-xl font-bold">
             {discount
@@ -60,11 +64,12 @@ function ProductTextData({
             </h5>
           )}
         </div>
-        <p>This price is exclusive of taxes.</p>
+        <p className="text-sm text-gray-600">This price is exclusive of taxes.</p>
       </div>
       {/* Description */}
-      <p className="text-gray-400 leading-relaxed">{description}</p>
+      <p className="text-gray-900 text-md leading-relaxed">{description}</p>
     </div>
+              </div>
   );
 }
 
