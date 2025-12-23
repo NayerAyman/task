@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       {
         url: "/og.png", 
         width: 900,
-        height: 630,
+        height: 550,
         alt: "TinyTals App",
       },
     ],
