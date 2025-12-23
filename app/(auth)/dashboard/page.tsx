@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getUser } from "../_lib/auth";
-
+import { getUser } from "../../_lib/auth";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -33,9 +32,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-3xl font-bold">
-        Welcome, {userName}!
-      </h1>
+      <h1 className="text-3xl font-bold">Welcome, {userName}!</h1>
     </div>
   );
 }
