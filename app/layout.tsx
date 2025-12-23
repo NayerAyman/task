@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "TinyTals App",
   description: "TinyTals App - Your platform for amazing tasks",
   icons: {
-    icon: "/logo.svg",
+    icon: "/og.png",
   },
   openGraph: {
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "TinyTals App -  task",
     images: [
       {
-        url: "https://task-nine-pied.vercel.app/logo.svg",
+        url: "https://task-nine-pied.vercel.app/og.png",
         width: 1200,
         height: 630,
         alt: "TinyTals App OG Image",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TinyTals App",
     description: "TinyTals App - task",
-    images: ["https://task-nine-pied.vercel.app/logo.svg"],
+    images: ["https://task-nine-pied.vercel.app/og.png"],
   },
 };
 
