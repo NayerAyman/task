@@ -19,13 +19,14 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://task-nine-pied.vercel.app/",
     title: "TinyTals App",
-    description: "TinyTals App -  task",
+    description: "TinyTals App - task",
+    siteName: "TinyTals",
     images: [
       {
-        url: "https://task-nine-pied.vercel.app/og.png",
+        url: "/og.png", 
         width: 1200,
         height: 630,
-        alt: "TinyTals App OG Image",
+        alt: "TinyTals App",
       },
     ],
   },
