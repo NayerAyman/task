@@ -187,11 +187,15 @@ export default function SuggestedProducts() {
 
   return (
     <section className="w-full pb-10 lg:ps-20 ps-5">
-      <h3 className=" relative mb-4 text-[22px] font-semibold">
-        Similar Items
-        <span className="w-15 md:w-9 h-1 bg-[#be968e] inline-block rounded-2xl absolute left-0 -bottom-1"></span>
-      </h3>
+      <div className="relative h-fit">
+      <h2 className="relative text-2xl md:text-3xl font-bold text-gray-800 mb-4 z-2">
+         Similar Items
+        <span className="w-15 md:w-12 h-1 bg-[#be968e] inline-block rounded-2xl absolute left-0 -bottom-1"></span>
+      </h2>
+      <Image src="/Layer_1.svg" alt="review" className="z-1 absolute bottom-0 left-1" width={110} height={100} />
+      </div>
 
+       
       <Swiper
         breakpoints={productCarouselBreakpoints}
         onSwiper={setSwiper}

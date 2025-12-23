@@ -54,10 +54,15 @@ export default function Rating() {
 
   return (
     <div className="relative p-1 md:p-4  mb-10 bg-white">
-      <h2 className="relative text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+
+      <div className="relative h-fit mt-10">
+      <h2 className="relative text-2xl md:text-3xl font-bold text-gray-800 mb-4 z-2">
         Rating & Reviews
         <span className="w-15 md:w-12 h-1 bg-[#be968e] inline-block rounded-2xl absolute left-0 -bottom-1"></span>
       </h2>
+      <Image src="/Layer_1.svg" alt="review" className="z-1 absolute bottom-0 left-1" width={110} height={100} />
+      </div>
+
       <div className="flex mb-5 flex-row">
         <div className="flex flex-col md:flex-row items-center gap-8 md:items-center w-full justify-start mb-6">
           <div className="flex m-auto md:m-0 items-baseline mb-4 md:mb-0">
@@ -139,7 +144,6 @@ export default function Rating() {
           View More Comments
         </button>
       </div>
-    <Image src="/Layer_1.svg" alt="review" className="absolute bottom-6 left-1" width={100} height={100} />
     </div>
   );
 }
