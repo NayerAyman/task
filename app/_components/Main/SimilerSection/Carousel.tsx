@@ -7,8 +7,6 @@ import "swiper/css";
 import Image from "next/image";
 import type { Swiper as SwiperType } from "swiper";
 
-
-
 /* ------------------ Swiper Breakpoints ------------------ */
 const productCarouselBreakpoints = {
   0: { slidesPerView: 2.2, spaceBetween: 12 },
@@ -78,27 +76,28 @@ function ProductCard({ product }: { product: ProductType }) {
       <div className="w-full bg-[#fafafa] border border-[#f0f0f0] flex flex-col items-stretch aspect-square rounded-xl ">
         {/* Header: Discount + Action Icons */}
         <div className="flex items-center justify-between p-3 w-full rounded-t-xl overflow-hidden">
-
           {product.discount ? (
             <span className="py-1 px-2 rounded-md border border-[#f0d5cf] bg-white text-[9px] font-medium text-[#c08a7d]">
               {product.discount}% OFF
             </span>
-          ):<span></span>}
+          ) : (
+            <span></span>
+          )}
 
           <div className="flex items-center gap-2 ">
             <button className="border border-gray-200 p-1 rounded-lg">
               <img
-              src="/icon/ecommerce/outline/bag-add.svg"
-              alt="Add to cart"
-              className="pt-0! size-5!"
-            />
+                src="/icon/ecommerce/outline/bag-add.svg"
+                alt="Add to cart"
+                className="pt-0! size-5!"
+              />
             </button>
             <button className="border border-gray-200 p-1 rounded-lg">
-            <img
-              src="/icon/interface/outline/heart_2.svg"
-              alt="Add to cart"
-              className="pt-0! size-5!"
-            />
+              <img
+                src="/icon/interface/outline/heart_2.svg"
+                alt="Add to cart"
+                className="pt-0! size-5!"
+              />
             </button>
           </div>
         </div>
@@ -144,7 +143,10 @@ function ProductCard({ product }: { product: ProductType }) {
             <p className="font-semibold">AED {product.price}</p>
             {product.discount && (
               <p className="text-[#aaa4a2] text-sm line-through">
-                AED {Math.round(product.price + (product.price * product.discount) / 100)}
+                AED{" "}
+                {Math.round(
+                  product.price + (product.price * product.discount) / 100
+                )}
               </p>
             )}
           </div>
@@ -156,7 +158,9 @@ function ProductCard({ product }: { product: ProductType }) {
                 onClick={() => setActiveColor(color)}
                 style={{ backgroundColor: color }}
                 className={`h-4 w-4 cursor-pointer rounded-full border ${
-                  activeColor === color ? "border-2 border-black" : "border border-[#ddd]"
+                  activeColor === color
+                    ? "border-2 border-black"
+                    : "border border-[#ddd]"
                 }`}
               />
             ))}
@@ -170,12 +174,11 @@ function ProductCard({ product }: { product: ProductType }) {
   );
 }
 
-
 /* ------------------ Main Component ------------------ */
-
-
 export default function SuggestedProducts() {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   const handlePrev = () => {
     swiper?.slidePrev();
@@ -188,17 +191,30 @@ export default function SuggestedProducts() {
   return (
     <section className="w-full pb-10 lg:ps-20 ps-5">
       <div className="relative h-fit">
-      <h2 className="relative text-2xl md:text-3xl font-bold text-gray-800 mb-4 z-2">
-         Similar Items
-        <span className="w-15 md:w-12 h-1 bg-[#be968e] inline-block rounded-2xl absolute left-0 -bottom-1"></span>
-      </h2>
-      <Image src="/Layer_1.svg" alt="review" className="z-1 absolute bottom-0 left-1" width={110} height={100} />
+        <h2 className="relative text-2xl md:text-3xl font-bold text-gray-800 mb-4 z-2">
+          Similar Items
+          <span className="w-15 md:w-12 h-1 bg-[#be968e] inline-block rounded-2xl absolute left-0 -bottom-1"></span>
+        </h2>
+        <Image
+          src="/Layer_1.svg"
+          alt="review"
+          className="z-1 absolute bottom-0 left-1"
+          width={110}
+          height={100}
+        />
       </div>
 
-       
       <Swiper
         breakpoints={productCarouselBreakpoints}
-        onSwiper={setSwiper}
+        onSwiper={(swiperInstance) => {
+          setSwiper(swiperInstance);
+          setIsBeginning(swiperInstance.isBeginning);
+          setIsEnd(swiperInstance.isEnd);
+          swiperInstance.on('slideChange', () => {
+            setIsBeginning(swiperInstance.isBeginning);
+            setIsEnd(swiperInstance.isEnd);
+          });
+        }}
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
@@ -212,16 +228,16 @@ export default function SuggestedProducts() {
         {/* Prev */}
         <button
           onClick={handlePrev}
-          disabled={!swiper}
+          disabled={isBeginning || !swiper}
           aria-label="Previous"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#eef1f5] transition hover:bg-[#e0e4ea] disabled:opacity-50"
+          className="disabled:bg-gray-200 disabled:[&_svg]:stroke-black flex h-12 w-12 items-center justify-center rounded-full bg-[#c08a7d] transition hover:bg-[#b0796d] disabled:opacity-50"
         >
           <svg
             width="20"
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#333"
+            stroke="#fff"
             strokeWidth="2"
           >
             <path d="M15 18l-6-6 6-6" />
@@ -231,9 +247,9 @@ export default function SuggestedProducts() {
         {/* Next */}
         <button
           onClick={handleNext}
-          disabled={!swiper}
+          disabled={isEnd || !swiper}
           aria-label="Next"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#c08a7d] transition hover:bg-[#b0796d] disabled:opacity-50"
+          className="disabled:bg-gray-200 disabled:[&_svg]:stroke-black flex h-12 w-12 items-center justify-center rounded-full bg-[#c08a7d] transition hover:bg-[#b0796d] disabled:opacity-50"
         >
           <svg
             width="20"
@@ -250,5 +266,3 @@ export default function SuggestedProducts() {
     </section>
   );
 }
-
-
