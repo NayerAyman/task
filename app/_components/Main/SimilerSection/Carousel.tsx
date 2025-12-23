@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
 import { useState } from "react";
@@ -127,7 +126,7 @@ function ProductCard({ product }: { product: ProductType }) {
               alt="star"
               width={16}
               height={16}
-              className="!pt-0"
+              className="pt-0!"
             />
             <span className="text-black font-medium">4.5</span>
             <span className="text-[#888]">(2910)</span>

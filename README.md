@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Task – Next.js  
+### Authentication Flow & UI Implementation
 
-## Getting Started
+A Next.js frontend task focused on implementing a complete authentication flow, correct API integration, and a fully responsive UI based on a provided design mockup.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📌 Authentication Flow
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The following authentication pages are implemented using Next.js:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🔐 Register Page
+- Full Name  
+- Email  
+- Password  
+- Phone Number  
+- Country Code  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🔑 Login Page
+- Email  
+- Password  
 
-## Learn More
+### ✅ Verify Account Page
+- Verification code input  
+- Correct verification code for testing: **123456**
 
-To learn more about Next.js, take a look at the following resources:
+### 🏠 Post-Login Behavior
+- Authentication token is stored in `localStorage`
+- User is redirected to a Dashboard page displaying:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Welcome, [User Name]**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎨 UI Implementation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- UI implemented according to the provided mockup  
+- Pixel-perfect layout, spacing, typography, and colors  
+- Fully responsive across desktop and mobile devices  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🔗 API Integration
+
+- Integrated with the provided Postman Collection  
+- Implemented endpoints:
+  - Register  
+  - Login  
+  - Verify Account  
+- API requests handled using **Axios**  
+- Proper success and error handling implemented  
+
+---
+
+## 🧰 Tech Stack
+
+### Core
+- Next.js 16  
+- React 19  
+- TypeScript  
+
+### Styling
+- Tailwind CSS  
+
+### Forms & Validation
+- React Hook Form  
+- Zod  
+
+### Utilities & UI
+- Axios  
+- SweetAlert2  
+- Swiper  
+- React Icons  
+
+---
+
+## ⚙️ Project Scripts
+
+Available npm scripts:
+
+- `dev` – Run the development server  
+- `build` – Create a production build  
+- `start` – Run the production build  
+- `lint` – Run ESLint checks  
+
+---
+
+## 🚀 Setup Instructions
+
+1. Install project dependencies  
+2. Run the development server  
+3. Open the application in the browser  
+
+---
+
+## 📝 Notes
+
+- Register and Login pages are evaluated mainly on API integration  
+- UI implementation is evaluated on design accuracy and responsiveness  
+- Task completed within the required **48-hour timeframe**  

@@ -11,9 +11,30 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "TinyTals App",
-  icons:{
-    icon:"/logo.svg"
-  }
+  description: "TinyTals App - Your platform for amazing tasks",
+  icons: {
+    icon: "/logo.svg",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://task-nine-pied.vercel.app/",
+    title: "TinyTals App",
+    description: "TinyTals App -  task",
+    images: [
+      {
+        url: "https://task-nine-pied.vercel.app/logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "TinyTals App OG Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TinyTals App",
+    description: "TinyTals App - task",
+    images: ["https://task-nine-pied.vercel.app/logo.svg"],
+  },
 };
 
 export default function RootLayout({
