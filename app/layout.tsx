@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "TinyTals App",
   description: "TinyTals App - Your platform for amazing tasks",
   icons: {
-    icon: "/og.png",
+    icon: "/logo.svg",
   },
   openGraph: {
     type: "website",
