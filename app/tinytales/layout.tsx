@@ -11,12 +11,11 @@ export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <>
-    <BackButton/>
-      <Header/>
-        {children}
-        <Footer/>
-    </>
-
+    <main id="mainLayout">
+      <BackButton />
+      <Header />
+      {children}
+      <Footer />
+    </main>
   );
 }

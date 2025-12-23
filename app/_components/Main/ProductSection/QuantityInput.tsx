@@ -60,7 +60,7 @@ function QuantityInput({
         <FiMinus />
       </button>
 
-      <span className="text-center px-9 text-md md:text-xl text-black">
+      <span className="text-center px-5 lg:px-9 text-md md:text-xl text-black">
         {quantity < 10 ? `0${quantity}` : quantity}
       </span>
 

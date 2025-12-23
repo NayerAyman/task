@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { FiChevronDown } from "react-icons/fi";
+import useLockBodyScroll from "@/app/_hooks/useLockBodyScroll";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,6 +15,8 @@ export default function NavBar() {
   const langRef = useRef<HTMLDivElement>(null);
   const userRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  useLockBodyScroll(menuOpen);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
