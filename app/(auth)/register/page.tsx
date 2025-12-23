@@ -43,6 +43,8 @@ export default function RegisterPage() {
   });
 
   const MySwal = withReactContent(Swal);
+    const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+
 
 const onSubmit = async (data: RegisterFormInputs) => {
   try {
@@ -71,7 +73,7 @@ const onSubmit = async (data: RegisterFormInputs) => {
   }
 };
 
-
+if(token) return null
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-blue-50 to-indigo-100 px-4">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">

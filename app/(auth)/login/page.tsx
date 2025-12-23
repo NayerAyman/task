@@ -16,6 +16,8 @@ const loginSchema = z.object({
 type LoginFormInputs = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
+    const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+
   const router = useRouter();
   const {
     register,
@@ -51,6 +53,7 @@ export default function LoginPage() {
     }
   };
 
+  if(token) return null
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-blue-50 to-indigo-100 px-4">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">

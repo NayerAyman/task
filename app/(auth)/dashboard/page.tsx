@@ -3,36 +3,38 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getUser } from "../../_lib/auth";
+import LogoutBtn from "@/app/_components/ui/LogoutBtn";
 
 export default function DashboardPage() {
   const router = useRouter();
   const [userName, setUserName] = useState<string | null>(null);
 
   useEffect(() => {
-    // Run in a microtask to avoid synchronous state update warnings
     const token = localStorage.getItem("token");
     const user = getUser();
 
     if (!token || !user) {
-      router.push("/login"); // redirect if not authenticated
+      router.push("/login");
       return;
     }
 
-    // Update state asynchronously
     setTimeout(() => setUserName(user.name), 0);
   }, [router]);
 
   if (!userName) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        Loading...
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <p className="text-gray-500 text-lg animate-pulse">Loading...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-3xl font-bold">Welcome, {userName}!</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
+      <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center">
+        Welcome, {userName}!
+      </h1>
+      <LogoutBtn />
     </div>
   );
 }

@@ -105,13 +105,13 @@ export default function Footer() {
           <div className=" w-full lg:w-1/3 xl:w-1/4">
             <h4 className="mb-6 text-2xl font-semibold">Send Email</h4>
 
-            <div className="flex relative items-center w-full bg-white rounded-lg  ">
+            <div className="flex relative items-center w-full bg-white rounded-2xl  ">
               <input
                 type="email"
                 placeholder="Email address"
                 className="flex-1 px-3 py-5 text-sm text-black outline-none"
               />
-              <button className="bg-[#c8a39b] px-10 font-semibold py-3 text-md  rounded-2xl absolute right-3 top-1/2 -translate-y-1/2">
+              <button className="bg-[#c8a39b] px-10 font-semibold py-3 text-md  rounded-2xl absolute right-2 top-1/2 -translate-y-1/2">
                 Send
               </button>
             </div>
