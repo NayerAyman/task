@@ -9,6 +9,7 @@ import { saveAuth } from "../../_lib/auth";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
+import Link from "next/link";
 
 const countryCodes = [
   { name: "Afghanistan", code: "+93" },
@@ -356,9 +357,9 @@ export default function RegisterPage() {
 
           <p className="text-center text-sm text-gray-600 mt-4">
             Already have an account?{" "}
-            <a href="/login" className="text-indigo-600 hover:underline">
+            <Link href="/login" className="text-indigo-600 hover:underline">
               Log in
-            </a>
+            </Link>
           </p>
         </form>
       </div>

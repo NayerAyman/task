@@ -7,6 +7,7 @@ import * as z from "zod";
 import { api } from "../../_lib/api";
 import { saveAuth } from "../../_lib/auth";
 import Swal from "sweetalert2";
+import Link from "next/link";
 
 const loginSchema = z.object({
   email: z.string().nonempty("Email is required").email("Invalid email address"),
@@ -86,9 +87,9 @@ export default function LoginPage() {
 
           <p className="text-center text-sm text-gray-600 mt-4">
             Don&apos;t have an account?{" "}
-            <a href="/register" className="text-indigo-600 hover:underline">
+            <Link href="/register" className="text-indigo-600 hover:underline">
               Register
-            </a>
+            </Link>
           </p>
         </form>
       </div>
